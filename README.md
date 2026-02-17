@@ -70,6 +70,35 @@ npm run dev
 npm run build
 ```
 
+4. Preview production build:
+
+```bash
+npm run preview
+```
+
+## GitHub Actions
+
+This project includes automated workflows:
+
+### Build and Deploy (build-and-deploy.yml)
+- **Trigger**: Pushes to `main` branch or manual workflow dispatch
+- **Actions**:
+  - Builds the Vite site
+  - Uploads build artifacts (30 day retention)
+  - Deploys to GitHub Pages
+- **URL**: The site will be available at `https://<username>.github.io/the-law-of-total-expectation/`
+
+### CI (ci.yml)
+- **Trigger**: Pull requests to `main` or pushes to other branches
+- **Actions**:
+  - Builds the site to verify no build errors
+  - Uploads build artifacts (7 day retention)
+
+To enable GitHub Pages deployment:
+1. Go to repository Settings → Pages
+2. Set Source to "GitHub Actions"
+3. The site will deploy automatically on the next push to `main`
+
 ## Notes
 
 - Simulations use deterministic seeded randomness for reproducibility.
