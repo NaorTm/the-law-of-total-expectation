@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "title": "Two routes (intro)",
+    "difficulty": "Intro",
+    "type": "Discrete",
+    "patternTags": ["Two stage", "Mixture"],
+    "domainTags": ["Transport"],
+    "problemMarkdown": "Let T be travel time and Y is route: bus (0.7) with E[T|bus]=30, train (0.3) with E[T|train]=15.",
+    "chooseYMarkdown": "Choose Y as route.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Identify Y as bus/train.", "mathLatex": "Y\\in\\{\\text{bus},\\text{train}\\}"},
+      {"title": "Step 2", "explanationMarkdown": "Use conditional means.", "mathLatex": "\\mathbb{E}[T\\mid bus]=30,\\ \\mathbb{E}[T\\mid train]=15"},
+      {"title": "Step 3", "explanationMarkdown": "Weighted average.", "mathLatex": "\\mathbb{E}[T]=0.7\\cdot30+0.3\\cdot15=25.5"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation converges near 25.5.", "mathLatex": "\\hat{\\mu}_N\\to25.5"}
+    ],
+    "alternateMethod": "Direct two-case average.",
+    "simulation": {
+      "type": "route_time",
+      "parameters": {"busProb": 0.7, "busTime": 30, "trainTime": 15},
+      "samplerJs": "const y=rng()<0.7?'bus':'train'; return y==='bus'?30:15;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[T]=25.5",
+    "finalResult": 25.5,
+    "keyTakeaway": "Total expectation averages conditional means."
+  },
+  {
+    "id": 2,
+    "title": "Pizza courier (intro)",
+    "difficulty": "Intro",
+    "type": "Discrete",
+    "patternTags": ["Two stage"],
+    "domainTags": ["Transport"],
+    "problemMarkdown": "P(main)=0.8 with E[T|main]=20, P(short)=0.2 with T|short=10.",
+    "chooseYMarkdown": "Choose Y as route.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Set Y in {main,short}.", "mathLatex": "Y\\in\\{\\text{main},\\text{short}\\}"},
+      {"title": "Step 2", "explanationMarkdown": "Read inner means.", "mathLatex": "\\mathbb{E}[T\\mid main]=20,\\ \\mathbb{E}[T\\mid short]=10"},
+      {"title": "Step 3", "explanationMarkdown": "Outer average.", "mathLatex": "\\mathbb{E}[T]=0.8\\cdot20+0.2\\cdot10=18"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation converges near 18.", "mathLatex": "\\hat{\\mu}_N\\to18"}
+    ],
+    "alternateMethod": "Simple scenario averaging.",
+    "simulation": {
+      "type": "pizza_time",
+      "parameters": {"mainProb": 0.8, "mainTime": 20, "shortTime": 10},
+      "samplerJs": "return rng()<0.8?20:10;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[T]=18",
+    "finalResult": 18,
+    "keyTakeaway": "The law handles deterministic branches too."
+  },
+  {
+    "id": 3,
+    "title": "Random coin bias (mixture)",
+    "difficulty": "Intro",
+    "type": "Discrete",
+    "patternTags": ["Mixture", "Bayesian"],
+    "domainTags": ["Games"],
+    "problemMarkdown": "Choose coin A with prob 0.6 (p=0.2) or B with prob 0.4 (p=0.8). X=1 for heads.",
+    "chooseYMarkdown": "Choose Y as coin identity.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Set Y in {A,B}.", "mathLatex": "Y\\in\\{A,B\\}"},
+      {"title": "Step 2", "explanationMarkdown": "Inner means are head probabilities.", "mathLatex": "\\mathbb{E}[X\\mid A]=0.2,\\ \\mathbb{E}[X\\mid B]=0.8"},
+      {"title": "Step 3", "explanationMarkdown": "Outer average over chosen coin.", "mathLatex": "\\mathbb{E}[X]=0.6\\cdot0.2+0.4\\cdot0.8=0.44"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation converges near 0.44.", "mathLatex": "\\hat{p}_N\\to0.44"}
+    ],
+    "alternateMethod": "Direct mixture mean.",
+    "simulation": {
+      "type": "coin_mixture",
+      "parameters": {"coinAProb": 0.6, "headA": 0.2, "headB": 0.8},
+      "samplerJs": "const p=rng()<0.6?0.2:0.8; return rng()<p?1:0;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=0.44",
+    "finalResult": 0.44,
+    "keyTakeaway": "Mixture means are weighted component means."
+  },
+  {
+    "id": 4,
+    "title": "Dice with random number of dice",
+    "difficulty": "Intermediate",
+    "type": "Discrete",
+    "patternTags": ["Random count"],
+    "domainTags": ["Games"],
+    "problemMarkdown": "N dice where P(N=1)=0.5 and P(N=2)=0.5. Let S be sum.",
+    "chooseYMarkdown": "Choose Y=N because E[S|N=n]=3.5n.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Condition on N.", "mathLatex": "\\mathbb{E}[S\\mid N=n]=3.5n"},
+      {"title": "Step 2", "explanationMarkdown": "Outer average.", "mathLatex": "\\mathbb{E}[S]=3.5\\mathbb{E}[N]"},
+      {"title": "Step 3", "explanationMarkdown": "Compute E[N].", "mathLatex": "\\mathbb{E}[N]=1\\cdot0.5+2\\cdot0.5=1.5"},
+      {"title": "Step 4", "explanationMarkdown": "Final value.", "mathLatex": "\\mathbb{E}[S]=5.25"}
+    ],
+    "alternateMethod": "Outcome enumeration is longer.",
+    "simulation": {
+      "type": "dice_random_count",
+      "parameters": {"pOneDie": 0.5},
+      "samplerJs": "const n=rng()<0.5?1:2; let s=0; for(let i=0;i<n;i++) s+=1+Math.floor(rng()*6); return s;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[S]=5.25",
+    "finalResult": 5.25,
+    "keyTakeaway": "Random sums become easy after conditioning on count."
+  },
+  {
+    "id": 5,
+    "title": "Random sum of i.i.d.",
+    "difficulty": "Intermediate",
+    "type": "Mixed",
+    "patternTags": ["Random count"],
+    "domainTags": ["Queues"],
+    "problemMarkdown": "S=sum_{i=1}^N X_i, X_i i.i.d. mean mu, independent of N. Numeric: mu=4, N~Poisson(3).",
+    "chooseYMarkdown": "Condition on N.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Inner mean of fixed-length sum.", "mathLatex": "\\mathbb{E}[S\\mid N]=N\\mu"},
+      {"title": "Step 2", "explanationMarkdown": "Outer expectation.", "mathLatex": "\\mathbb{E}[S]=\\mu\\mathbb{E}[N]"},
+      {"title": "Step 3", "explanationMarkdown": "Poisson mean is lambda.", "mathLatex": "\\mathbb{E}[S]=4\\cdot3=12"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\approx12"}
+    ],
+    "alternateMethod": "Wald's identity.",
+    "simulation": {
+      "type": "random_sum_poisson",
+      "parameters": {"mu": 4, "lambda": 3, "sigma": 1},
+      "samplerJs": "const n=poissonSample(3,rng); let s=0; for(let i=0;i<n;i++) s+=normalSample(4,1,rng); return s;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[S]=12",
+    "finalResult": 12,
+    "keyTakeaway": "E[random sum]=E[count]*E[increment] under independence."
+  },
+  {
+    "id": 6,
+    "title": "Indicator trick for clicks",
+    "difficulty": "Intermediate",
+    "type": "Discrete",
+    "patternTags": ["Indicators", "Mixture"],
+    "domainTags": ["Finance"],
+    "problemMarkdown": "10 users. Segment Y is A(0.4) or B(0.6). Click prob is 0.7 in A and 0.3 in B. X is total clicks.",
+    "chooseYMarkdown": "Condition on Y so all indicator means are simple.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Write X as sum of indicators.", "mathLatex": "X=\\sum_{i=1}^{10} I_i"},
+      {"title": "Step 2", "explanationMarkdown": "Given Y, each indicator mean is p_Y.", "mathLatex": "\\mathbb{E}[X\\mid Y]=10p_Y"},
+      {"title": "Step 3", "explanationMarkdown": "Average over Y.", "mathLatex": "\\mathbb{E}[X]=10(0.4\\cdot0.7+0.6\\cdot0.3)=4.6"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to4.6"}
+    ],
+    "alternateMethod": "Find unconditional click probability first.",
+    "simulation": {
+      "type": "indicator_clicks",
+      "parameters": {"segmentAProb": 0.4, "pA": 0.7, "pB": 0.3, "nUsers": 10},
+      "samplerJs": "const p=rng()<0.4?0.7:0.3; let x=0; for(let i=0;i<10;i++) if(rng()<p) x++; return x;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=4.6",
+    "finalResult": 4.6,
+    "keyTakeaway": "Indicators + conditioning is a powerful workflow."
+  },
+  {
+    "id": 7,
+    "title": "Mixture of Gaussians",
+    "difficulty": "Intermediate",
+    "type": "Mixed",
+    "patternTags": ["Mixture"],
+    "domainTags": ["Communications"],
+    "problemMarkdown": "Y in {1,2} with probs 0.3,0.7. X|Y=1~N(0,1), X|Y=2~N(5,4).",
+    "chooseYMarkdown": "Condition on mixture label Y.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Inner means are component means.", "mathLatex": "\\mathbb{E}[X\\mid1]=0,\\ \\mathbb{E}[X\\mid2]=5"},
+      {"title": "Step 2", "explanationMarkdown": "Outer weighted average.", "mathLatex": "\\mathbb{E}[X]=0.3\\cdot0+0.7\\cdot5=3.5"},
+      {"title": "Step 3", "explanationMarkdown": "Interpretation.", "mathLatex": "\\mu=3.5"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to3.5"}
+    ],
+    "alternateMethod": "Mixture mean identity.",
+    "simulation": {
+      "type": "gaussian_mixture",
+      "parameters": {"w1": 0.3, "m1": 0, "s1": 1, "m2": 5, "s2": 2},
+      "samplerJs": "const c=rng()<0.3?1:2; return c===1?normalSample(0,1,rng):normalSample(5,2,rng);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=3.5",
+    "finalResult": 3.5,
+    "keyTakeaway": "Mixture variance can change while mean formula stays simple."
+  },
+  {
+    "id": 8,
+    "title": "Uniform with random endpoint",
+    "difficulty": "Advanced",
+    "type": "Continuous",
+    "patternTags": ["Continuous"],
+    "domainTags": ["Transport"],
+    "problemMarkdown": "Y~Uniform(0,1). Given Y=y, X|y~Uniform(0,y).",
+    "chooseYMarkdown": "Condition on endpoint y.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Inner mean for uniform interval.", "mathLatex": "\\mathbb{E}[X\\mid Y=y]=y/2"},
+      {"title": "Step 2", "explanationMarkdown": "Outer expectation.", "mathLatex": "\\mathbb{E}[X]=\\mathbb{E}[Y/2]"},
+      {"title": "Step 3", "explanationMarkdown": "Use E[Y]=1/2.", "mathLatex": "\\mathbb{E}[X]=1/4"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to0.25"}
+    ],
+    "alternateMethod": "Joint-density integration is longer.",
+    "simulation": {
+      "type": "uniform_random_endpoint",
+      "parameters": {},
+      "samplerJs": "const y=rng(); return rng()*y;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=1/4",
+    "finalResult": 0.25,
+    "keyTakeaway": "Continuous conditioning converts geometry into one easy mean."
+  },
+  {
+    "id": 9,
+    "title": "Exponential with random rate",
+    "difficulty": "Advanced",
+    "type": "Mixed",
+    "patternTags": ["Random rate", "Mixture"],
+    "domainTags": ["Reliability"],
+    "problemMarkdown": "Rate Y is 1 (0.5) or 2 (0.5). Given Y=y, X|y~Exponential(y).",
+    "chooseYMarkdown": "Condition on rate Y.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Exponential mean is reciprocal rate.", "mathLatex": "\\mathbb{E}[X\\mid Y=y]=1/y"},
+      {"title": "Step 2", "explanationMarkdown": "Average over Y.", "mathLatex": "\\mathbb{E}[X]=0.5\\cdot1+0.5\\cdot0.5=0.75"},
+      {"title": "Step 3", "explanationMarkdown": "Interpretation.", "mathLatex": "\\mu=0.75"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\approx0.75"}
+    ],
+    "alternateMethod": "Mixture density integration works too.",
+    "simulation": {
+      "type": "exponential_random_rate",
+      "parameters": {"rate1Prob": 0.5, "rate1": 1, "rate2": 2},
+      "samplerJs": "const r=rng()<0.5?1:2; return -Math.log(1-rng())/r;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=0.75",
+    "finalResult": 0.75,
+    "keyTakeaway": "Random environment parameters are prime conditioning variables."
+  },
+  {
+    "id": 10,
+    "title": "Poisson with random rate",
+    "difficulty": "Intermediate",
+    "type": "Discrete",
+    "patternTags": ["Compound", "Random rate"],
+    "domainTags": ["Queues"],
+    "problemMarkdown": "Given Lambda, N|Lambda~Poisson(Lambda). Lambda is 3 with prob 0.2 and 10 with prob 0.8.",
+    "chooseYMarkdown": "Condition on Lambda.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Inner expectation of Poisson.", "mathLatex": "\\mathbb{E}[N\\mid\\Lambda]=\\Lambda"},
+      {"title": "Step 2", "explanationMarkdown": "Outer expectation.", "mathLatex": "\\mathbb{E}[N]=\\mathbb{E}[\\Lambda]"},
+      {"title": "Step 3", "explanationMarkdown": "Compute weighted mean.", "mathLatex": "\\mathbb{E}[N]=0.2\\cdot3+0.8\\cdot10=8.6"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to8.6"}
+    ],
+    "alternateMethod": "Equivalent to latent-rate mean.",
+    "simulation": {
+      "type": "poisson_random_rate",
+      "parameters": {"pLow": 0.2, "low": 3, "high": 10},
+      "samplerJs": "const l=rng()<0.2?3:10; return poissonSample(l,rng);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[N]=8.6",
+    "finalResult": 8.6,
+    "keyTakeaway": "E[N]=E[Lambda] in mixed Poisson models."
+  },
+  {
+    "id": 11,
+    "title": "Reliability: random stress level",
+    "difficulty": "Intro",
+    "type": "Discrete",
+    "patternTags": ["Two stage"],
+    "domainTags": ["Reliability"],
+    "problemMarkdown": "Stress Y is low/high with P(high)=0.3. Means: E[T|low]=1000 hours, E[T|high]=400 hours.",
+    "chooseYMarkdown": "Condition on stress state.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Y is stress state.", "mathLatex": "Y\\in\\{\\text{low},\\text{high}\\}"},
+      {"title": "Step 2", "explanationMarkdown": "Use conditional means.", "mathLatex": "\\mathbb{E}[T\\mid low]=1000,\\ \\mathbb{E}[T\\mid high]=400"},
+      {"title": "Step 3", "explanationMarkdown": "Weighted average.", "mathLatex": "\\mathbb{E}[T]=0.7\\cdot1000+0.3\\cdot400=820"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\approx820"}
+    ],
+    "alternateMethod": "Direct scenario average.",
+    "simulation": {
+      "type": "reliability_stress",
+      "parameters": {"pHigh": 0.3, "meanLow": 1000, "meanHigh": 400},
+      "samplerJs": "const m=rng()<0.3?400:1000; return -Math.log(1-rng())*m;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[T]=820",
+    "finalResult": 820,
+    "keyTakeaway": "Stress-mode models are natural two-stage expectations."
+  },
+  {
+    "id": 12,
+    "title": "Queueing service time by job type",
+    "difficulty": "Intro",
+    "type": "Discrete",
+    "patternTags": ["Mixture"],
+    "domainTags": ["Queues"],
+    "problemMarkdown": "Job type Y in {A,B,C} has probs 0.2,0.5,0.3 and means E[S|A]=2, E[S|B]=5, E[S|C]=1.",
+    "chooseYMarkdown": "Condition on job type.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Y partitions job classes.", "mathLatex": "Y\\in\\{A,B,C\\}"},
+      {"title": "Step 2", "explanationMarkdown": "Use class means.", "mathLatex": "(2,5,1)"},
+      {"title": "Step 3", "explanationMarkdown": "Weighted average by class frequency.", "mathLatex": "\\mathbb{E}[S]=0.2\\cdot2+0.5\\cdot5+0.3\\cdot1=3.2"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to3.2"}
+    ],
+    "alternateMethod": "Equivalent categorical expectation.",
+    "simulation": {
+      "type": "service_job_type",
+      "parameters": {"probs": [0.2, 0.5, 0.3], "means": [2, 5, 1]},
+      "samplerJs": "const u=rng(); if(u<0.2)return 2; if(u<0.7)return 5; return 1;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[S]=3.2",
+    "finalResult": 3.2,
+    "keyTakeaway": "Queue averages often start with class-conditioned means."
+  },
+  {
+    "id": 13,
+    "title": "Finance payoff under scenarios",
+    "difficulty": "Intermediate",
+    "type": "Mixed",
+    "patternTags": ["Mixture", "Two stage"],
+    "domainTags": ["Finance"],
+    "problemMarkdown": "Market state Y is bull(0.5), flat(0.3), bear(0.2). X|Y is random with means 12, 4, -6.",
+    "chooseYMarkdown": "Condition on market state.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Define state variable Y.", "mathLatex": "Y\\in\\{\\text{bull},\\text{flat},\\text{bear}\\}"},
+      {"title": "Step 2", "explanationMarkdown": "Use conditional means.", "mathLatex": "\\mathbb{E}[X\\mid bull]=12,\\ \\mathbb{E}[X\\mid flat]=4,\\ \\mathbb{E}[X\\mid bear]=-6"},
+      {"title": "Step 3", "explanationMarkdown": "Weighted sum.", "mathLatex": "\\mathbb{E}[X]=0.5\\cdot12+0.3\\cdot4+0.2\\cdot(-6)=6"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check with random payoffs in each state.", "mathLatex": "\\hat{\\mu}_N\\approx6"}
+    ],
+    "alternateMethod": "Direct marginal calculation is less transparent.",
+    "simulation": {
+      "type": "finance_scenarios",
+      "parameters": {"probs": [0.5, 0.3, 0.2], "means": [12, 4, -6], "stds": [8, 5, 10]},
+      "samplerJs": "const i=drawCategorical([0.5,0.3,0.2],rng); return normalSample([12,4,-6][i],[8,5,10][i],rng);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=6",
+    "finalResult": 6,
+    "keyTakeaway": "Random payoffs inside each regime still fit total expectation."
+  },
+  {
+    "id": 14,
+    "title": "Bayesian predictive expectation",
+    "difficulty": "Intermediate",
+    "type": "Mixed",
+    "patternTags": ["Bayesian", "Random parameter"],
+    "domainTags": ["Finance"],
+    "problemMarkdown": "Theta~Beta(2,3). Given Theta=theta, X|Theta~Bernoulli(theta).",
+    "chooseYMarkdown": "Condition on Theta.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Bernoulli conditional mean.", "mathLatex": "\\mathbb{E}[X\\mid\\Theta]=\\Theta"},
+      {"title": "Step 2", "explanationMarkdown": "Outer expectation over Theta.", "mathLatex": "\\mathbb{E}[X]=\\mathbb{E}[\\Theta]"},
+      {"title": "Step 3", "explanationMarkdown": "Beta mean formula.", "mathLatex": "\\mathbb{E}[X]=\\frac{2}{2+3}=0.4"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{p}_N\\to0.4"}
+    ],
+    "alternateMethod": "Posterior predictive mean uses same identity.",
+    "simulation": {
+      "type": "bayesian_predictive",
+      "parameters": {"alpha": 2, "beta": 3},
+      "samplerJs": "const theta=betaSample(2,3,rng); return rng()<theta?1:0;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=0.4",
+    "finalResult": 0.4,
+    "keyTakeaway": "Predictive expectations average over parameter uncertainty."
+  },
+  {
+    "id": 15,
+    "title": "Two-layer tower: store then coupon",
+    "difficulty": "Advanced",
+    "type": "Discrete",
+    "patternTags": ["Tower", "Two stage"],
+    "domainTags": ["Finance"],
+    "problemMarkdown": "Store Y is local(0.4) or mall(0.6). Coupon Z|Y has P(Z=1|local)=0.2 and P(Z=1|mall)=0.5. E[X|Y,Z]=40+20*1_{Y=mall}-10Z.",
+    "chooseYMarkdown": "Condition on (Y,Z), then average to Y and overall.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Condition on full info.", "mathLatex": "\\mathbb{E}[X\\mid Y,Z]=40+20\\mathbf{1}_{\\{Y=mall\\}}-10Z"},
+      {"title": "Step 2", "explanationMarkdown": "Average Z within each Y.", "mathLatex": "\\mathbb{E}[X\\mid local]=38,\\ \\mathbb{E}[X\\mid mall]=55"},
+      {"title": "Step 3", "explanationMarkdown": "Average over Y.", "mathLatex": "\\mathbb{E}[X]=0.4\\cdot38+0.6\\cdot55=48.2"},
+      {"title": "Step 4", "explanationMarkdown": "Tower form.", "mathLatex": "\\mathbb{E}[X]=\\mathbb{E}[\\mathbb{E}[\\mathbb{E}[X\\mid Y,Z]\\mid Y]]"}
+    ],
+    "alternateMethod": "Enumerate all four branches.",
+    "simulation": {
+      "type": "tower_store_coupon",
+      "parameters": {"pMall": 0.6, "pCouponLocal": 0.2, "pCouponMall": 0.5},
+      "samplerJs": "const mall=rng()<0.6; const z=rng()<(mall?0.5:0.2)?1:0; return 40+(mall?20:0)-10*z;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=48.2",
+    "finalResult": 48.2,
+    "keyTakeaway": "Tower property averages from more to less information."
+  },
+  {
+    "id": 16,
+    "title": "Conditional expectation as random variable",
+    "difficulty": "Intro",
+    "type": "Discrete",
+    "patternTags": ["Conceptual"],
+    "domainTags": ["Games"],
+    "problemMarkdown": "Y in {0,1} equally likely and X=10Y.",
+    "chooseYMarkdown": "Condition on Y.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Compute conditional expectation.", "mathLatex": "\\mathbb{E}[X\\mid Y]=10Y"},
+      {"title": "Step 2", "explanationMarkdown": "Recognize randomness.", "mathLatex": "\\mathbb{E}[X\\mid Y]\\in\\{0,10\\}"},
+      {"title": "Step 3", "explanationMarkdown": "Outer expectation.", "mathLatex": "\\mathbb{E}[X]=\\mathbb{E}[10Y]=5"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to5"}
+    ],
+    "alternateMethod": "Directly 10*P(Y=1).",
+    "simulation": {
+      "type": "conditional_random_variable",
+      "parameters": {},
+      "samplerJs": "const y=rng()<0.5?0:1; return 10*y;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=5",
+    "finalResult": 5,
+    "keyTakeaway": "E[X|Y] is usually random."
+  },
+  {
+    "id": 17,
+    "title": "Pitfall: bad conditioning variable",
+    "difficulty": "Advanced",
+    "type": "Mixed",
+    "patternTags": ["Pitfall", "Mixture"],
+    "domainTags": ["Communications"],
+    "problemMarkdown": "Delay X depends on network state Y={clear,congested}. Bad choice is unrelated packet label U. Given P(congested)=0.3, E[X|clear]=20, E[X|congested]=80.",
+    "chooseYMarkdown": "Condition on Y, not U.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Bad choice does not simplify.", "mathLatex": "\\mathbb{E}[X\\mid U]\\text{ remains hard}"},
+      {"title": "Step 2", "explanationMarkdown": "Good choice reveals structure.", "mathLatex": "Y\\in\\{\\text{clear},\\text{congested}\\}"},
+      {"title": "Step 3", "explanationMarkdown": "Compute weighted mean.", "mathLatex": "\\mathbb{E}[X]=0.7\\cdot20+0.3\\cdot80=38"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\approx38"}
+    ],
+    "alternateMethod": "No cleaner direct route with bad variable.",
+    "simulation": {
+      "type": "bad_conditioning_demo",
+      "parameters": {"pCongested": 0.3, "meanClear": 20, "meanCongested": 80},
+      "samplerJs": "const c=rng()<0.3; return c?normalSample(80,12,rng):normalSample(20,6,rng);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=38",
+    "finalResult": 38,
+    "keyTakeaway": "Pick Y that reduces complexity."
+  },
+  {
+    "id": 18,
+    "title": "Engineering SNR by channel state",
+    "difficulty": "Advanced",
+    "type": "Mixed",
+    "patternTags": ["Communications", "Two stage"],
+    "domainTags": ["Communications"],
+    "problemMarkdown": "Channel state Y is good(0.6) or bad(0.4). E[C|good]=3.5 and E[C|bad]=1.2 for C=log2(1+SNR).",
+    "chooseYMarkdown": "Condition on Y since SNR distribution depends on state.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Identify state variable.", "mathLatex": "Y\\in\\{\\text{good},\\text{bad}\\}"},
+      {"title": "Step 2", "explanationMarkdown": "Use conditional capacities.", "mathLatex": "\\mathbb{E}[C\\mid good]=3.5,\\ \\mathbb{E}[C\\mid bad]=1.2"},
+      {"title": "Step 3", "explanationMarkdown": "Weighted average.", "mathLatex": "\\mathbb{E}[C]=0.6\\cdot3.5+0.4\\cdot1.2=2.58"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to2.58"}
+    ],
+    "alternateMethod": "Direct unconditional integration is harder.",
+    "simulation": {
+      "type": "snr_capacity",
+      "parameters": {"pGood": 0.6, "snrGood": [8, 10, 12], "snrBad": [0.5, 1, 2]},
+      "samplerJs": "const good=rng()<0.6; const arr=good?[8,10,12]:[0.5,1,2]; const snr=arr[Math.floor(rng()*arr.length)]; return Math.log2(1+snr);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[C]=2.58",
+    "finalResult": 2.58,
+    "keyTakeaway": "State conditioning simplifies expected channel capacity."
+  },
+  {
+    "id": 19,
+    "title": "Insurance claims by policy type",
+    "difficulty": "Intermediate",
+    "type": "Discrete",
+    "patternTags": ["Mixture", "Random count"],
+    "domainTags": ["Finance"],
+    "problemMarkdown": "Policy Y is standard(0.7) or premium(0.3). N|standard~Poisson(1.1), N|premium~Poisson(2.4).",
+    "chooseYMarkdown": "Condition on policy type.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Conditional Poisson means.", "mathLatex": "\\mathbb{E}[N\\mid standard]=1.1,\\ \\mathbb{E}[N\\mid premium]=2.4"},
+      {"title": "Step 2", "explanationMarkdown": "Average over type mix.", "mathLatex": "\\mathbb{E}[N]=0.7\\cdot1.1+0.3\\cdot2.4=1.49"},
+      {"title": "Step 3", "explanationMarkdown": "Interpretation.", "mathLatex": "\\mu=1.49"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\approx1.49"}
+    ],
+    "alternateMethod": "Equivalent latent-rate average.",
+    "simulation": {
+      "type": "insurance_claims",
+      "parameters": {"pStandard": 0.7, "lambdaStandard": 1.1, "lambdaPremium": 2.4},
+      "samplerJs": "const l=rng()<0.7?1.1:2.4; return poissonSample(l,rng);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[N]=1.49",
+    "finalResult": 1.49,
+    "keyTakeaway": "Portfolio means are weighted segment means."
+  },
+  {
+    "id": 20,
+    "title": "Manufacturing defects by shift",
+    "difficulty": "Intermediate",
+    "type": "Discrete",
+    "patternTags": ["Indicators", "Two stage"],
+    "domainTags": ["Reliability"],
+    "problemMarkdown": "Day shift prob 0.65, night 0.35. 50 units per batch. Defect prob is 0.01 (day) and 0.04 (night). X defects per batch.",
+    "chooseYMarkdown": "Condition on shift Y.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Write X as indicator sum.", "mathLatex": "X=\\sum_{i=1}^{50}I_i"},
+      {"title": "Step 2", "explanationMarkdown": "Conditional means by shift.", "mathLatex": "\\mathbb{E}[X\\mid day]=0.5,\\ \\mathbb{E}[X\\mid night]=2"},
+      {"title": "Step 3", "explanationMarkdown": "Average over shift probabilities.", "mathLatex": "\\mathbb{E}[X]=0.65\\cdot0.5+0.35\\cdot2=1.025"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to1.025"}
+    ],
+    "alternateMethod": "Use unconditional per-unit defect probability then multiply by 50.",
+    "simulation": {
+      "type": "manufacturing_defects",
+      "parameters": {"pDay": 0.65, "defDay": 0.01, "defNight": 0.04, "nUnits": 50},
+      "samplerJs": "const p=rng()<0.65?0.01:0.04; let x=0; for(let i=0;i<50;i++) if(rng()<p) x++; return x;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=1.025",
+    "finalResult": 1.025,
+    "keyTakeaway": "Conditioning on operating mode simplifies quality metrics."
+  },
+  {
+    "id": 21,
+    "title": "Bus waiting with random traffic",
+    "difficulty": "Intermediate",
+    "type": "Mixed",
+    "patternTags": ["Mixture"],
+    "domainTags": ["Transport"],
+    "problemMarkdown": "Traffic Y is smooth(0.55) or heavy(0.45). Means: E[W|smooth]=6 minutes, E[W|heavy]=14 minutes.",
+    "chooseYMarkdown": "Condition on traffic state.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Read conditional means.", "mathLatex": "\\mathbb{E}[W\\mid smooth]=6,\\ \\mathbb{E}[W\\mid heavy]=14"},
+      {"title": "Step 2", "explanationMarkdown": "Weighted average.", "mathLatex": "\\mathbb{E}[W]=0.55\\cdot6+0.45\\cdot14=9.6"},
+      {"title": "Step 3", "explanationMarkdown": "Interpretation.", "mathLatex": "\\mu=9.6"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\approx9.6"}
+    ],
+    "alternateMethod": "Mixture density approach gives same mean.",
+    "simulation": {
+      "type": "bus_waiting",
+      "parameters": {"pSmooth": 0.55, "meanSmooth": 6, "meanHeavy": 14},
+      "samplerJs": "const m=rng()<0.55?6:14; return -Math.log(1-rng())*m;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[W]=9.6",
+    "finalResult": 9.6,
+    "keyTakeaway": "Mixture wait models are easy in expectation."
+  },
+  {
+    "id": 22,
+    "title": "Clinical response with adherence",
+    "difficulty": "Advanced",
+    "type": "Discrete",
+    "patternTags": ["Two stage", "Indicators"],
+    "domainTags": ["Reliability"],
+    "problemMarkdown": "Adherence Y is high(0.75) or low(0.25). Response indicator X has P(X=1|high)=0.68 and P(X=1|low)=0.31.",
+    "chooseYMarkdown": "Condition on adherence state.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Indicator conditional means.", "mathLatex": "\\mathbb{E}[X\\mid high]=0.68,\\ \\mathbb{E}[X\\mid low]=0.31"},
+      {"title": "Step 2", "explanationMarkdown": "Weighted average.", "mathLatex": "\\mathbb{E}[X]=0.75\\cdot0.68+0.25\\cdot0.31=0.5875"},
+      {"title": "Step 3", "explanationMarkdown": "Interpretation.", "mathLatex": "p=0.5875"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{p}_N\\to0.5875"}
+    ],
+    "alternateMethod": "Directly average subgroup response rates.",
+    "simulation": {
+      "type": "clinical_response",
+      "parameters": {"pHigh": 0.75, "respHigh": 0.68, "respLow": 0.31},
+      "samplerJs": "const p=rng()<0.75?0.68:0.31; return rng()<p?1:0;"
+    },
+    "expectedValueLatex": "\\mathbb{E}[X]=0.5875",
+    "finalResult": 0.5875,
+    "keyTakeaway": "Population averages are conditional averages of subgroups."
+  },
+  {
+    "id": 23,
+    "title": "Network packets under random load",
+    "difficulty": "Advanced",
+    "type": "Discrete",
+    "patternTags": ["Random count", "Two stage"],
+    "domainTags": ["Communications", "Queues"],
+    "problemMarkdown": "Load Y is light(0.5), medium(0.3), heavy(0.2). N|Y~Poisson with means 20,35,60.",
+    "chooseYMarkdown": "Condition on load state Y.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Inner means are load rates.", "mathLatex": "\\mathbb{E}[N\\mid Y]=\\lambda_Y"},
+      {"title": "Step 2", "explanationMarkdown": "Average over state probabilities.", "mathLatex": "\\mathbb{E}[N]=0.5\\cdot20+0.3\\cdot35+0.2\\cdot60=32.5"},
+      {"title": "Step 3", "explanationMarkdown": "Interpretation.", "mathLatex": "\\mu=32.5"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\to32.5"}
+    ],
+    "alternateMethod": "Equivalent to E[Lambda] with random lambda.",
+    "simulation": {
+      "type": "network_packets",
+      "parameters": {"probs": [0.5, 0.3, 0.2], "lambdas": [20, 35, 60]},
+      "samplerJs": "const i=drawCategorical([0.5,0.3,0.2],rng); return poissonSample([20,35,60][i],rng);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[N]=32.5",
+    "finalResult": 32.5,
+    "keyTakeaway": "Queue intensity mixtures are direct total-expectation applications."
+  },
+  {
+    "id": 24,
+    "title": "Rainfall with random storm regime",
+    "difficulty": "Advanced",
+    "type": "Continuous",
+    "patternTags": ["Continuous", "Random environment"],
+    "domainTags": ["Reliability"],
+    "problemMarkdown": "Storm regime Y is mild(0.6) or intense(0.4). Means are E[R|mild]=6 mm and E[R|intense]=10 mm.",
+    "chooseYMarkdown": "Condition on regime Y.",
+    "solutionSteps": [
+      {"title": "Step 1", "explanationMarkdown": "Use regime conditional means.", "mathLatex": "\\mathbb{E}[R\\mid mild]=6,\\ \\mathbb{E}[R\\mid intense]=10"},
+      {"title": "Step 2", "explanationMarkdown": "Weighted average over regimes.", "mathLatex": "\\mathbb{E}[R]=0.6\\cdot6+0.4\\cdot10=7.6"},
+      {"title": "Step 3", "explanationMarkdown": "Interpretation.", "mathLatex": "\\mu=7.6"},
+      {"title": "Step 4", "explanationMarkdown": "Simulation check.", "mathLatex": "\\hat{\\mu}_N\\approx7.6"}
+    ],
+    "alternateMethod": "Direct mixture-density integration gives same mean.",
+    "simulation": {
+      "type": "rainfall_regime",
+      "parameters": {"pMild": 0.6, "mild": {"shape": 2, "scale": 3}, "intense": {"shape": 5, "scale": 2}},
+      "samplerJs": "const m=rng()<0.6; const c=m?{k:2,t:3}:{k:5,t:2}; return gammaSample(c.k,c.t,rng);"
+    },
+    "expectedValueLatex": "\\mathbb{E}[R]=7.6",
+    "finalResult": 7.6,
+    "keyTakeaway": "Continuous regime mixtures still reduce to weighted conditional means."
+  }
+]

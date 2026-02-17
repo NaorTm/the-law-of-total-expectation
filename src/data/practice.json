@@ -1,0 +1,1388 @@
+[
+    {
+        "id":  1,
+        "level":  1,
+        "title":  "Level 1 Problem 1",
+        "problemStatement":  "Scenario Y is A with probability 0.49 and B otherwise. E[X|A]=14 and E[X|B]=9. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=14,\\\\ \\\\mathbb{E}[X\\\\mid B]=9"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.49\\\\cdot14+(1-0.49)\\\\cdot9=11.45"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  11.45,
+        "simulationCheck":  "Sample Y then return 14 or 9 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  2,
+        "level":  1,
+        "title":  "Level 1 Problem 2",
+        "problemStatement":  "Scenario Y is A with probability 0.53 and B otherwise. E[X|A]=16 and E[X|B]=10. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=16,\\\\ \\\\mathbb{E}[X\\\\mid B]=10"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.53\\\\cdot16+(1-0.53)\\\\cdot10=13.18"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  13.18,
+        "simulationCheck":  "Sample Y then return 16 or 10 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  3,
+        "level":  1,
+        "title":  "Level 1 Problem 3",
+        "problemStatement":  "Scenario Y is A with probability 0.57 and B otherwise. E[X|A]=18 and E[X|B]=11. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=18,\\\\ \\\\mathbb{E}[X\\\\mid B]=11"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.57\\\\cdot18+(1-0.57)\\\\cdot11=14.99"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  14.99,
+        "simulationCheck":  "Sample Y then return 18 or 11 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  4,
+        "level":  1,
+        "title":  "Level 1 Problem 4",
+        "problemStatement":  "Scenario Y is A with probability 0.61 and B otherwise. E[X|A]=20 and E[X|B]=12. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=20,\\\\ \\\\mathbb{E}[X\\\\mid B]=12"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.61\\\\cdot20+(1-0.61)\\\\cdot12=16.88"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  16.88,
+        "simulationCheck":  "Sample Y then return 20 or 12 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  5,
+        "level":  1,
+        "title":  "Level 1 Problem 5",
+        "problemStatement":  "Scenario Y is A with probability 0.65 and B otherwise. E[X|A]=22 and E[X|B]=13. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=22,\\\\ \\\\mathbb{E}[X\\\\mid B]=13"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.65\\\\cdot22+(1-0.65)\\\\cdot13=18.85"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  18.85,
+        "simulationCheck":  "Sample Y then return 22 or 13 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  6,
+        "level":  1,
+        "title":  "Level 1 Problem 6",
+        "problemStatement":  "Scenario Y is A with probability 0.69 and B otherwise. E[X|A]=24 and E[X|B]=14. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=24,\\\\ \\\\mathbb{E}[X\\\\mid B]=14"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.69\\\\cdot24+(1-0.69)\\\\cdot14=20.9"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  20.9,
+        "simulationCheck":  "Sample Y then return 24 or 14 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  7,
+        "level":  1,
+        "title":  "Level 1 Problem 7",
+        "problemStatement":  "Scenario Y is A with probability 0.73 and B otherwise. E[X|A]=26 and E[X|B]=15. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=26,\\\\ \\\\mathbb{E}[X\\\\mid B]=15"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.73\\\\cdot26+(1-0.73)\\\\cdot15=23.03"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  23.03,
+        "simulationCheck":  "Sample Y then return 26 or 15 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  8,
+        "level":  1,
+        "title":  "Level 1 Problem 8",
+        "problemStatement":  "Scenario Y is A with probability 0.77 and B otherwise. E[X|A]=28 and E[X|B]=16. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=28,\\\\ \\\\mathbb{E}[X\\\\mid B]=16"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.77\\\\cdot28+(1-0.77)\\\\cdot16=25.24"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  25.24,
+        "simulationCheck":  "Sample Y then return 28 or 16 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  9,
+        "level":  1,
+        "title":  "Level 1 Problem 9",
+        "problemStatement":  "Scenario Y is A with probability 0.81 and B otherwise. E[X|A]=30 and E[X|B]=17. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=30,\\\\ \\\\mathbb{E}[X\\\\mid B]=17"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.81\\\\cdot30+(1-0.81)\\\\cdot17=27.53"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  27.53,
+        "simulationCheck":  "Sample Y then return 30 or 17 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  10,
+        "level":  1,
+        "title":  "Level 1 Problem 10",
+        "problemStatement":  "Scenario Y is A with probability 0.85 and B otherwise. E[X|A]=32 and E[X|B]=18. Find E[X].",
+        "hint1":  "Identify Y as the scenario variable.",
+        "hint2":  "Compute E[X|Y=A] and E[X|Y=B], then weight by P(Y).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Use total expectation with Y in {A,B}.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\sum_y \\\\mathbb{E}[X\\\\mid Y=y]P(Y=y)"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Plug in conditional means.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid A]=32,\\\\ \\\\mathbb{E}[X\\\\mid B]=18"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute weighted average.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.85\\\\cdot32+(1-0.85)\\\\cdot18=29.9"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally verify by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  29.9,
+        "simulationCheck":  "Sample Y then return 32 or 18 conditionally.",
+        "pattern":  "Direct weighted average"
+    },
+    {
+        "id":  11,
+        "level":  2,
+        "title":  "Level 2 Problem 1",
+        "problemStatement":  "Coin A chosen with probability 0.42 and has head probability 0.14; coin B has head probability 0.75. X is head indicator.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.42\\\\cdot0.14+(1-0.42)\\\\cdot0.75=0.4938"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.4938,
+        "simulationCheck":  "Sample coin, then Bernoulli flip.",
+        "pattern":  "Mixture"
+    },
+    {
+        "id":  12,
+        "level":  2,
+        "title":  "Level 2 Problem 2",
+        "problemStatement":  "N equals 1 with probability 0.34 and 3 otherwise. Roll N fair dice and let X be the sum.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=3.5\\\\mathbb{E}[N]=3.5\\\\cdot2.32=8.12"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  8.12,
+        "simulationCheck":  "Sample N, roll N dice, average sums.",
+        "pattern":  "Random count"
+    },
+    {
+        "id":  13,
+        "level":  2,
+        "title":  "Level 2 Problem 3",
+        "problemStatement":  "There are 20 users. Segment A occurs with probability 0.38 and B otherwise. Click probs are 0.53 in A and 0.24 in B. X is total clicks.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=20(0.38\\\\cdot0.53+(1-0.38)\\\\cdot0.24)=7.004"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  7.004,
+        "simulationCheck":  "Sample segment then n Bernoulli clicks.",
+        "pattern":  "Indicators"
+    },
+    {
+        "id":  14,
+        "level":  2,
+        "title":  "Level 2 Problem 4",
+        "problemStatement":  "Coin A chosen with probability 0.48 and has head probability 0.2; coin B has head probability 0.72. X is head indicator.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.48\\\\cdot0.2+(1-0.48)\\\\cdot0.72=0.4704"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.4704,
+        "simulationCheck":  "Sample coin, then Bernoulli flip.",
+        "pattern":  "Mixture"
+    },
+    {
+        "id":  15,
+        "level":  2,
+        "title":  "Level 2 Problem 5",
+        "problemStatement":  "N equals 1 with probability 0.4 and 3 otherwise. Roll N fair dice and let X be the sum.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=3.5\\\\mathbb{E}[N]=3.5\\\\cdot2.2=7.7"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  7.7,
+        "simulationCheck":  "Sample N, roll N dice, average sums.",
+        "pattern":  "Random count"
+    },
+    {
+        "id":  16,
+        "level":  2,
+        "title":  "Level 2 Problem 6",
+        "problemStatement":  "There are 20 users. Segment A occurs with probability 0.41 and B otherwise. Click probs are 0.56 in A and 0.29 in B. X is total clicks.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=20(0.41\\\\cdot0.56+(1-0.41)\\\\cdot0.29)=8.014"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  8.014,
+        "simulationCheck":  "Sample segment then n Bernoulli clicks.",
+        "pattern":  "Indicators"
+    },
+    {
+        "id":  17,
+        "level":  2,
+        "title":  "Level 2 Problem 7",
+        "problemStatement":  "Coin A chosen with probability 0.54 and has head probability 0.26; coin B has head probability 0.69. X is head indicator.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.54\\\\cdot0.26+(1-0.54)\\\\cdot0.69=0.4578"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.4578,
+        "simulationCheck":  "Sample coin, then Bernoulli flip.",
+        "pattern":  "Mixture"
+    },
+    {
+        "id":  18,
+        "level":  2,
+        "title":  "Level 2 Problem 8",
+        "problemStatement":  "N equals 1 with probability 0.46 and 3 otherwise. Roll N fair dice and let X be the sum.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=3.5\\\\mathbb{E}[N]=3.5\\\\cdot2.08=7.28"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  7.28,
+        "simulationCheck":  "Sample N, roll N dice, average sums.",
+        "pattern":  "Random count"
+    },
+    {
+        "id":  19,
+        "level":  2,
+        "title":  "Level 2 Problem 9",
+        "problemStatement":  "There are 20 users. Segment A occurs with probability 0.44 and B otherwise. Click probs are 0.59 in A and 0.34 in B. X is total clicks.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=20(0.44\\\\cdot0.59+(1-0.44)\\\\cdot0.34)=9"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  9,
+        "simulationCheck":  "Sample segment then n Bernoulli clicks.",
+        "pattern":  "Indicators"
+    },
+    {
+        "id":  20,
+        "level":  2,
+        "title":  "Level 2 Problem 10",
+        "problemStatement":  "Coin A chosen with probability 0.6 and has head probability 0.32; coin B has head probability 0.66. X is head indicator.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=0.6\\\\cdot0.32+(1-0.6)\\\\cdot0.66=0.456"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.456,
+        "simulationCheck":  "Sample coin, then Bernoulli flip.",
+        "pattern":  "Mixture"
+    },
+    {
+        "id":  21,
+        "level":  2,
+        "title":  "Level 2 Problem 11",
+        "problemStatement":  "N equals 1 with probability 0.52 and 3 otherwise. Roll N fair dice and let X be the sum.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=3.5\\\\mathbb{E}[N]=3.5\\\\cdot1.96=6.86"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  6.86,
+        "simulationCheck":  "Sample N, roll N dice, average sums.",
+        "pattern":  "Random count"
+    },
+    {
+        "id":  22,
+        "level":  2,
+        "title":  "Level 2 Problem 12",
+        "problemStatement":  "There are 20 users. Segment A occurs with probability 0.47 and B otherwise. Click probs are 0.62 in A and 0.38 in B. X is total clicks.",
+        "hint1":  "Pick Y as latent scenario or count variable.",
+        "hint2":  "Compute inner expectation first, then average over Y.",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Define a useful conditioning variable Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Derive conditional expectation in each scenario.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]\\\\text{ is simpler}"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=20(0.47\\\\cdot0.62+(1-0.47)\\\\cdot0.38)=9.856"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally validate by simulation.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  9.856,
+        "simulationCheck":  "Sample segment then n Bernoulli clicks.",
+        "pattern":  "Indicators"
+    },
+    {
+        "id":  23,
+        "level":  3,
+        "title":  "Level 3 Problem 1",
+        "problemStatement":  "Y~Uniform(0,1.2). Given Y=y, X|Y=y~Uniform(0,0.6y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(0.6 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/1.2"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^1.2 \\\\frac{0.6 y}{2}\\\\frac{1}{1.2}dy=0.18"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.18,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  24,
+        "level":  3,
+        "title":  "Level 3 Problem 2",
+        "problemStatement":  "Y~Uniform(0,1.4). Given Y=y, X|Y=y~Uniform(0,0.7y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(0.7 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/1.4"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^1.4 \\\\frac{0.7 y}{2}\\\\frac{1}{1.4}dy=0.245"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.245,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  25,
+        "level":  3,
+        "title":  "Level 3 Problem 3",
+        "problemStatement":  "Y~Uniform(0,1.6). Given Y=y, X|Y=y~Uniform(0,0.8y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(0.8 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/1.6"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^1.6 \\\\frac{0.8 y}{2}\\\\frac{1}{1.6}dy=0.32"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.32,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  26,
+        "level":  3,
+        "title":  "Level 3 Problem 4",
+        "problemStatement":  "Y~Uniform(0,1.8). Given Y=y, X|Y=y~Uniform(0,0.9y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(0.9 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/1.8"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^1.8 \\\\frac{0.9 y}{2}\\\\frac{1}{1.8}dy=0.405"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.405,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  27,
+        "level":  3,
+        "title":  "Level 3 Problem 5",
+        "problemStatement":  "Y~Uniform(0,2). Given Y=y, X|Y=y~Uniform(0,1y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/2"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^2 \\\\frac{1 y}{2}\\\\frac{1}{2}dy=0.5"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.5,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  28,
+        "level":  3,
+        "title":  "Level 3 Problem 6",
+        "problemStatement":  "Y~Uniform(0,2.2). Given Y=y, X|Y=y~Uniform(0,1.1y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1.1 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/2.2"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^2.2 \\\\frac{1.1 y}{2}\\\\frac{1}{2.2}dy=0.605"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.605,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  29,
+        "level":  3,
+        "title":  "Level 3 Problem 7",
+        "problemStatement":  "Y~Uniform(0,2.4). Given Y=y, X|Y=y~Uniform(0,1.2y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1.2 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/2.4"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^2.4 \\\\frac{1.2 y}{2}\\\\frac{1}{2.4}dy=0.72"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.72,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  30,
+        "level":  3,
+        "title":  "Level 3 Problem 8",
+        "problemStatement":  "Y~Uniform(0,2.6). Given Y=y, X|Y=y~Uniform(0,1.3y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1.3 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/2.6"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^2.6 \\\\frac{1.3 y}{2}\\\\frac{1}{2.6}dy=0.845"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.845,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  31,
+        "level":  3,
+        "title":  "Level 3 Problem 9",
+        "problemStatement":  "Y~Uniform(0,2.8). Given Y=y, X|Y=y~Uniform(0,1.4y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1.4 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/2.8"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^2.8 \\\\frac{1.4 y}{2}\\\\frac{1}{2.8}dy=0.98"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  0.98,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  32,
+        "level":  3,
+        "title":  "Level 3 Problem 10",
+        "problemStatement":  "Y~Uniform(0,3). Given Y=y, X|Y=y~Uniform(0,1.5y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1.5 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/3"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^3 \\\\frac{1.5 y}{2}\\\\frac{1}{3}dy=1.125"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  1.125,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  33,
+        "level":  3,
+        "title":  "Level 3 Problem 11",
+        "problemStatement":  "Y~Uniform(0,3.2). Given Y=y, X|Y=y~Uniform(0,1.6y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1.6 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/3.2"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^3.2 \\\\frac{1.6 y}{2}\\\\frac{1}{3.2}dy=1.28"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  1.28,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  34,
+        "level":  3,
+        "title":  "Level 3 Problem 12",
+        "problemStatement":  "Y~Uniform(0,3.4). Given Y=y, X|Y=y~Uniform(0,1.7y). Compute E[X].",
+        "hint1":  "Condition on Y and write E[X|Y=y].",
+        "hint2":  "Integrate E[X|Y=y]f_Y(y) over y in [0,a].",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Inner uniform mean.",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid Y=y]=(1.7 y)/2"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Y has density 1/a on [0,a].",
+                                  "mathLatex":  "f_Y(y)=1/3.4"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Compute integral.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\int_0^3.4 \\\\frac{1.7 y}{2}\\\\frac{1}{3.4}dy=1.445"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  1.445,
+        "simulationCheck":  "Sample y uniformly, then x uniformly on [0,by].",
+        "pattern":  "Continuous conditioning"
+    },
+    {
+        "id":  35,
+        "level":  4,
+        "title":  "Level 4 Problem 1",
+        "problemStatement":  "Y is local/mall with P(mall)=0.4. Coupon Z has P(Z=1|local)=0.12 and P(Z=1|mall)=0.33. E[X|Y,Z]=32+11*1_{Y=mall}-5.5 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=31.34,\\\\ \\\\mathbb{E}[X\\\\mid mall]=41.185"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.4)\\\\cdot31.34+0.4\\\\cdot41.185=35.2780"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  35.2780,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    },
+    {
+        "id":  36,
+        "level":  4,
+        "title":  "Level 4 Problem 2",
+        "problemStatement":  "Y is local/mall with P(mall)=0.45. Coupon Z has P(Z=1|local)=0.14 and P(Z=1|mall)=0.36. E[X|Y,Z]=34+12*1_{Y=mall}-6 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=33.16,\\\\ \\\\mathbb{E}[X\\\\mid mall]=43.84"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.45)\\\\cdot33.16+0.45\\\\cdot43.84=37.9660"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  37.9660,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    },
+    {
+        "id":  37,
+        "level":  4,
+        "title":  "Level 4 Problem 3",
+        "problemStatement":  "Y is local/mall with P(mall)=0.5. Coupon Z has P(Z=1|local)=0.16 and P(Z=1|mall)=0.39. E[X|Y,Z]=36+13*1_{Y=mall}-6.5 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=34.96,\\\\ \\\\mathbb{E}[X\\\\mid mall]=46.465"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.5)\\\\cdot34.96+0.5\\\\cdot46.465=40.7125"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  40.7125,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    },
+    {
+        "id":  38,
+        "level":  4,
+        "title":  "Level 4 Problem 4",
+        "problemStatement":  "Y is local/mall with P(mall)=0.55. Coupon Z has P(Z=1|local)=0.18 and P(Z=1|mall)=0.42. E[X|Y,Z]=38+14*1_{Y=mall}-7 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=36.74,\\\\ \\\\mathbb{E}[X\\\\mid mall]=49.06"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.55)\\\\cdot36.74+0.55\\\\cdot49.06=43.5160"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  43.5160,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    },
+    {
+        "id":  39,
+        "level":  4,
+        "title":  "Level 4 Problem 5",
+        "problemStatement":  "Y is local/mall with P(mall)=0.6. Coupon Z has P(Z=1|local)=0.2 and P(Z=1|mall)=0.45. E[X|Y,Z]=40+15*1_{Y=mall}-7.5 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=38.5,\\\\ \\\\mathbb{E}[X\\\\mid mall]=51.625"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.6)\\\\cdot38.5+0.6\\\\cdot51.625=46.3750"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  46.3750,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    },
+    {
+        "id":  40,
+        "level":  4,
+        "title":  "Level 4 Problem 6",
+        "problemStatement":  "Y is local/mall with P(mall)=0.65. Coupon Z has P(Z=1|local)=0.22 and P(Z=1|mall)=0.48. E[X|Y,Z]=42+16*1_{Y=mall}-8 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=40.24,\\\\ \\\\mathbb{E}[X\\\\mid mall]=54.16"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.65)\\\\cdot40.24+0.65\\\\cdot54.16=49.2880"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  49.2880,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    },
+    {
+        "id":  41,
+        "level":  4,
+        "title":  "Level 4 Problem 7",
+        "problemStatement":  "Y is local/mall with P(mall)=0.7. Coupon Z has P(Z=1|local)=0.24 and P(Z=1|mall)=0.51. E[X|Y,Z]=44+17*1_{Y=mall}-8.5 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=41.96,\\\\ \\\\mathbb{E}[X\\\\mid mall]=56.665"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.7)\\\\cdot41.96+0.7\\\\cdot56.665=52.2535"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  52.2535,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    },
+    {
+        "id":  42,
+        "level":  4,
+        "title":  "Level 4 Problem 8",
+        "problemStatement":  "Y is local/mall with P(mall)=0.75. Coupon Z has P(Z=1|local)=0.26 and P(Z=1|mall)=0.54. E[X|Y,Z]=46+18*1_{Y=mall}-9 Z. Find E[X].",
+        "hint1":  "First compute E[X|Y] by averaging over Z.",
+        "hint2":  "Then average E[X|Y] over Y (tower property).",
+        "solutionSteps":  [
+                              {
+                                  "title":  "Step 1",
+                                  "text":  "Start with rich conditioning.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=\\\\mathbb{E}[\\\\mathbb{E}[\\\\mathbb{E}[X\\\\mid Y,Z]\\\\mid Y]]"
+                              },
+                              {
+                                  "title":  "Step 2",
+                                  "text":  "Compute E[X|local] and E[X|mall].",
+                                  "mathLatex":  "\\\\mathbb{E}[X\\\\mid local]=43.66,\\\\ \\\\mathbb{E}[X\\\\mid mall]=59.14"
+                              },
+                              {
+                                  "title":  "Step 3",
+                                  "text":  "Average over Y.",
+                                  "mathLatex":  "\\\\mathbb{E}[X]=(1-0.75)\\\\cdot43.66+0.75\\\\cdot59.14=55.2700"
+                              },
+                              {
+                                  "title":  "Step 4",
+                                  "text":  "Optionally simulate two-stage sampling.",
+                                  "mathLatex":  "\\\\hat{\\\\mu}_N\\\\to\\\\mathbb{E}[X]"
+                              }
+                          ],
+        "finalResult":  55.2700,
+        "simulationCheck":  "Sample Y, sample Z|Y, evaluate X from conditional mean model.",
+        "pattern":  "Tower property"
+    }
+]

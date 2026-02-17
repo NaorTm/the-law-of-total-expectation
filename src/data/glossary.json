@@ -1,0 +1,47 @@
+[
+  {
+    "term": "Random variable",
+    "definition": "A numerical function of an outcome in a random experiment.",
+    "example": "If a coin lands heads, X=1, else X=0."
+  },
+  {
+    "term": "Expectation",
+    "definition": "The long-run average value of a random variable.",
+    "example": "For Bernoulli(p), E[X]=p."
+  },
+  {
+    "term": "Conditional expectation E[X|Y]",
+    "definition": "A random variable giving the average of X when information in Y is known.",
+    "example": "If X=10Y and Y in {0,1}, then E[X|Y]=10Y."
+  },
+  {
+    "term": "Conditional expectation E[X|Y=y]",
+    "definition": "A number: the average of X under the event Y=y.",
+    "example": "E[X|Y=1]=5."
+  },
+  {
+    "term": "Partition of sample space",
+    "definition": "Disjoint events that cover all outcomes.",
+    "example": "Market states {bull, flat, bear}."
+  },
+  {
+    "term": "PMF",
+    "definition": "Probability mass function for discrete variables.",
+    "example": "P(Y=y)."
+  },
+  {
+    "term": "Density",
+    "definition": "Probability density function for continuous variables.",
+    "example": "f_Y(y)."
+  },
+  {
+    "term": "Tower property",
+    "definition": "Nested conditioning identity E(E(X|G)|H)=E(X|H) when H is coarser than G.",
+    "example": "E(E(X|Y,Z)|Y)=E(X|Y)."
+  },
+  {
+    "term": "Sigma algebra (optional advanced)",
+    "definition": "A collection of events representing an information set; conditioning is averaging with respect to that information.",
+    "example": "Knowing Y generates a sigma algebra sigma(Y)."
+  }
+]
